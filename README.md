@@ -10,9 +10,9 @@
   * python3 app_test.py
 ## Usage for production
 * Usage CLi
-** python3 models/plate_predictor.py plate year/month/day hour:minute:secund
+  * python3 models/plate_predictor.py plate year/month/day hour:minute:secund
 * Usage web
-** python3 main.py
+  * python3 main.py
 ## Todo  
 * user interface in flask for visual experience
 * missing parameters
