@@ -5,9 +5,9 @@
 * python 3
 ## Usage for test 
 * Ifyou only wint cli
-** python3 test_plate_predictor.py
+  * python3 test_plate_predictor.py
 * If you want flask teset interface
-** python3 app_test.py
+  * python3 app_test.py
 ## Usage for production
 * Usage CLi
 ** python3 models/plate_predictor.py plate year/month/day hour:minute:secund
