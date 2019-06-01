@@ -6,7 +6,6 @@ class PlatePredictor():
 
     def __init__(self, plate, now):
         self.plate =  re.match('(\w{3})-(\d{3}$)', plate)
-        self.validate_plate()
         # 'year/moneth/day hour:minutes:secund'
         self.now = dt.datetime.strptime(now, '%Y/%m/%d %H:%M:%S')
         self.first_segment = self.plate.group(1)
@@ -18,7 +17,7 @@ class PlatePredictor():
 
     def validate_plate(self):
         if not self.plate:
-            raise
+            return 'Invalid plate'
 
 
     def get_provincial(self):

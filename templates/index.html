@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+  $(function() {
+    $('a#validate').bind('click', function() {
+      $.getJSON($SCRIPT_ROOT + '/get_info', {
+        plate: $('input[name="plate"]').val(),
+        date: $('input[name="date"]').val()
+      }, function(data) {
+        $("#result").html(data.info);
+      });
+      return false;
+    });
+    $('a#clear').bind('click', function() {
+        $("#result").html('');
+      return false;
+    });
+  });
+</script>
+<main role="main">
+    <section class="jumbotron text-center">
+        <br class="container">
+          <h1 class="jumbotron-heading">Plate Predict</h1>
+          <p class="lead text-muted">
+              Inputs should be a license plate number
+              (the full number, not the last digit), a date (as a String),
+              and a time, and the program will return whether or not that car can be on the road
+          </p>
+            <div style="padding-left: 40%; text-align:left;">
+              <p>
+                Plate :
+                  <input type=text name=plate>
+              </p>
+              <p>
+                Date :
+                <input type=text name=date>
+              <p>
+              <div id="result">
+              </div>
+            </div>
+            </br>
+          <p>
+            <a href="#" id="validate" class="btn btn-primary my-2">Validate</a>
+            <a href="#" id="clear" class="btn my-2">Clear</a>
+          </p>
+        </div>
+      </section>
+</main>
+{% endblock %}
