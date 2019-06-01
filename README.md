@@ -3,10 +3,16 @@
 * Determinate if a car can road depends of the plate
 ## Requirement
 * python 3
-## usage for test 
-* python3 test_plate_predictor.py
+## Usage for test 
+* Ifyou only wint cli
+** python3 test_plate_predictor.py
+* If you want flask teset interface
+** python3 app_test.py
 ## Usage for production
-* python3 models/plate_predictor.py plate year/month/day hour:minute:secund
+* Usage CLi
+** python3 models/plate_predictor.py plate year/month/day hour:minute:secund
+* Usage web
+** python3 main.py
 ## Todo  
 * user interface in flask for visual experience
 * missing parameters
