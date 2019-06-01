@@ -4,6 +4,10 @@ app = Flask(__name__)
 
 @app.route('/get_info')
 def add_numbers():
+    """
+    json for predict
+    :return: info from predit
+    """
     # 'abc-123', '2019/05/30 21:10:10'
     plate = request.args.get('plate', 0, type=str)
     date= request.args.get('date', 0, type=str)
@@ -14,6 +18,10 @@ def add_numbers():
 
 @app.route("/")
 def hello():
+    """
+    website url index
+    :return:
+    """
     return render_template('index.html')
 
 if __name__ == "__main__":

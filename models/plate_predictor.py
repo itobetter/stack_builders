@@ -5,6 +5,11 @@ import re
 class PlatePredictor():
 
     def __init__(self, plate, now):
+        """
+        initiaze parameters
+        :param plate:
+        :param now:
+        """
         self.plate =  re.match('(\w{3})-(\d{3}$)', plate)
         # 'year/moneth/day hour:minutes:secund'
         self.now = dt.datetime.strptime(now, '%Y/%m/%d %H:%M:%S')
@@ -16,11 +21,19 @@ class PlatePredictor():
 
 
     def validate_plate(self):
+        """
+        validate the data is valid for usage
+        :return: str is invalid
+        """
         if not self.plate:
             return 'Invalid plate'
 
 
     def get_provincial(self):
+        """
+        determine provincial of vahicule
+        :return: provincial
+        """
         return {
             'A': 'Azuay',
             'B': 'Bolívar',
@@ -60,6 +73,10 @@ class PlatePredictor():
         
         
     def get_can_road(self):
+        """
+        with the date determine if apply tico y placa
+        :return:
+        """
         xrange_days = [
             (1,2),(3,4),
             (5,6),(7,8),
@@ -70,6 +87,10 @@ class PlatePredictor():
 
 
     def get_info(self):
+        """
+        return information with data
+        :return:
+        """
         return """Plate :{0} </br> Provincial: {1} </br> Type: {2} </br> Can road: {3} </br>""".format(
             "-".join(self.plate.groups()),
             self.get_provincial(),
